@@ -18,10 +18,12 @@ function startListening() {
 
     recognition.onresult = function(event) {
 
+        recognition.stop();
+
         var command =
         event.results[0][0].transcript.toLowerCase();
 
-        alert("You said: " + command);
+        //alert("You said: " + command);
 
         if(command.includes("forward"))
             window.location.href =
